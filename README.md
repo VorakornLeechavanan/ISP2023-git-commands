@@ -38,21 +38,21 @@ In this file, directory paths are written with a forward slash as on MacOS, Linu
 ## Basics
 
 1. When using Git locally, what are these?  Define each one in a sentence
-   * Staging area -
-   * Working copy -
-   * master -
-   * HEAD -
+   * Staging area - The area for holding and adding the specific files that will be considered for saving in the new Git Repository commit
+   * Working copy -  The work that is based on cloning from the Remote Repository
+   * master - The default branch in the Git Repository
+   * HEAD - The symbol for identifying current commit or current branch that the user is checking in
 
 2. When you install git on a new machine (or in a new user account) you should perform these 2 git commands to tell git your name and email.  These values are used in commits that you make:
    ```
    # Git configuration commands for a new account
-
-
+   git config --global user.name "<Your Username>"
+   git config --global user.email "<Your Email>"
    ```
 
 3. There are 2 ways to create a local Git repository.  Briefly descibe each one:
-   - todo: describe first way to create a local repo
-   - todo: describe second way to create a local repo
+   - Write git init to initialize and track all the file in the local repository
+   - Write git clone to copy the work from the Github to the local repository
 
 
 ## Adding and Changing Things
@@ -73,45 +73,43 @@ test/
 
 1. Add README.md and *everything* in the `src` directory to the git staging area.
    ```
-   todo  your answer here
+   git add README.md src/*
    ```
 
 2. Add `test/test_a.py` to the staging area (but not any other files).
    ```
-   todo  your answer
+   git add test/test_a.py
    ```
 
 3. List the names of files in the staging area.
    ```
-   todo  your answer
+   git diff --name-only --staged
    ```
 
 4. Remove `README.md` from the staging area. This is **very useful** if you accidentally add something you don't want to commit.
    ```
-   todo  your answer
+   git restore --staged README.md
    ```
 
 5. Commit everything in the staging area to the repository.
    ```
-   todo  your answer
+   git commit -m "<Your Message>"
    ```
 
 6. In any project, there are some files and directories that you **should not** commit to git.    
    For a Python project, name *at least* files or directories that you should not commit to git:
-   - 
-   - 
-   -
-
+   - .gitignore
+   - .idea
 
 7. Command to move all the .py files from the `src` dir to the top-level directory of this repository. This command moves them in your working copy *and* in the git repo (when you commit the change):
    ```
-
+   git mv src/*.py
    ```
-
 
 8. In this repository, create your own `.gitignore` file that you can reuse in other Python projects.  Add everything that you think is relevant.    
    *Hint:* A good place to start is to create a new repo on Github and during the creation dialog, ask Github to make a .gitignore for Python projects. Then edit it.  Don't forget to include pytest output and MacOS junk.
-
+   ```
+   ```
 
 
 ## Undo Changes and Recover Files
@@ -120,29 +118,39 @@ test/
 > For questions where you are showing a command, use triple-backquote marks (as above) so the text is formatted as code.
 
 1.  Display the differences between your *working copy* of `a.py` and the `a.py` in the *local repository* (HEAD revision):
-
+    ```
+    git diff src/a.py
+    ```
 
 2. Display the differences between your *working copy* of `a.py` and the version in the *staging area*. (But, if a.py is not in the staging area this will compare working copy to HEAD revision):
+   ```
+   git diff --staged src/a.py
+   ```
 
 3. **View changes to be committed:** Display the differences between files in the staging area and the versions in the repository. (You can also specify a file name to compare just one file.) 
-
+   ```
+   ```
 
 4. **Undo "git add":** If `main.py` has been added to the staging area (`git add main.py`), remove it from the staging area:
-
-
+   ```
+   git restore --staged main.py
+   ```
 5. **Recover a file:** Command to replace your working copy of `a.py` with the most recent (HEAD) version in the repository.  This also works if you have deleted your working copy of this file.
-
-
+   ```
+   git checkout HEAD src/a.py
+   ```
 6. **Undo a commit:** Suppose you want to discard some commit(s) and move both HEAD and "master" to an earlier revision (an earlier commit)  Suppose the git commit graph looks like this (`aaaa`, etc, are the commit ids)
    ```
    aaaa ---> bbbb ---> cccc ---> dddd [HEAD -> master]
    ``` 
    The command to reset HEAD and master to the commit id `bbbb`:
-
+   ```
+   git reset --hard bbbb
+   ```
 
 7. **Checkout old code:** Using the above example, the command to replace your working copy with the files from commit with id `aaaa`:
    ```
-   todo your answer here
+   git checkout aaaa
    ```
     Note:
     - Git won't let you do this if you have uncommitted changes to any "tracked" files.
@@ -159,13 +167,12 @@ test/
 
 2. Show the history (as above) including *all* branches in the repository and include a graph connecting the commits:
    ```
-
+   git log --graph
    ```
-
 
 3. List all the files in the current branch of the repository:
    ```
-   todo your answer
+   git ls-tree <Current Branch> -r --name-only
    ```
    Example output:
    ```

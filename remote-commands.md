@@ -1,16 +1,15 @@
 ## Commands for Remotes
 
-> TODO Write your answers and then remove **all** the TODO comments
-   ```
+
 
 1. List all your remote repositories and show their URLs:
    ```
-   Todo write the git command for this
+   git remote -v
    ```
 
 2. View details about a remote repo named `origin`, including all the remote branches and local tracking branches for `origin`:
    ```
-   Todo write the git command for this
+   git remote show origin
    ```
 
 3. (Pushing a new branch) You commit some files to the `dev-foo` branch and try to "push" them to Github, but it fails as shown here:
@@ -21,10 +20,14 @@
    fatal:  The current branch dev-foo has no upstream branch. 
    ```
    Explain this error.
-   > TODO Since you are writing an explanation (not shell commands), write your answer in lines beginning with `>` like this one. The text will be formatted and may include Markdown.
+   > Remote Repository requires the upstream branch to track the specific branch. According to this error, 
+     the user needs to set up the upstream branch in order to possibly push the dev-foo branch to the Remote Repository 
 
 
 4. The command to push `dev-foo` to `origin` as a **new remote branch** on `origin` is:
+   ```
+   git push --set-upstream origin dev-foo
+   ```
 
 
 5. (Create a local tracking branch for a remote branch) The remote repository (`origin`) has a branch named `e2e-test` that you don't have in your local repository.   
@@ -43,7 +46,7 @@
    - you move from Github to another hosting site, like Bitbucket
    - you want to switch from the https to the ssh protocol (the remote URL is different)    
 
-8. To create a *second* remote repository for your local repo, the command to add a remote named "bitbucket" with the URL "https://bitbucket.org/your-username/git-commands" is:
+7. To create a *second* remote repository for your local repo, the command to add a remote named "bitbucket" with the URL "https://bitbucket.org/your-username/git-commands" is:
    ```
    todo your answer
    ```
