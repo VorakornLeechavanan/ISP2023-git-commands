@@ -17,8 +17,6 @@
 5. **Test that your answers are correct!** There is **no excuse** for incorrect answers since you can test your answers by experimentation.      
 6. Verify that your Markdown formatting is correct -- points deducted for bad formatting. VS Code and IntelliJ have markdown previewers. You should also preview it on Github, since Github Markdown is a bit non-standard.
 
-**TODO**: Delete these instructions before you submit your work. Points deducted for each "TODO" in this file.
-
 ## Using Git
 
 [Basics](#basics)    
@@ -68,8 +66,7 @@ src/a.py
 test/
     test_a.py
     ...
-```     
-> TODO: Write the git command to perform each of these:
+```
 
 1. Add README.md and *everything* in the `src` directory to the git staging area.
    ```
@@ -114,21 +111,21 @@ test/
 
 ## Undo Changes and Recover Files
 
-> TODO: enter the git command to do each of these
-> For questions where you are showing a command, use triple-backquote marks (as above) so the text is formatted as code.
+
 
 1.  Display the differences between your *working copy* of `a.py` and the `a.py` in the *local repository* (HEAD revision):
     ```
-    git diff src/a.py
+    git diff HEAD src/a.py
     ```
 
 2. Display the differences between your *working copy* of `a.py` and the version in the *staging area*. (But, if a.py is not in the staging area this will compare working copy to HEAD revision):
    ```
-   git diff --staged src/a.py
+   git diff src/a.py
    ```
 
 3. **View changes to be committed:** Display the differences between files in the staging area and the versions in the repository. (You can also specify a file name to compare just one file.) 
    ```
+   git diff --staged src/a.py
    ```
 
 4. **Undo "git add":** If `main.py` has been added to the staging area (`git add main.py`), remove it from the staging area:
@@ -187,20 +184,15 @@ test/
 
 ## Branch and Merge
 
-**TODO**: This section is free-form.  Create 4 numbered items for common branch-and-merge tasks you would like to remember and show the git command to do each one. (You are write *more* than 4 if you want.)
 
 
 
 ## Favorites
 
-> TODO: Describe *at least* 1 task that you would like to remember, and the git command(s) to do it.
-
 
 
 ---
 ## Resources
-
-> TODO: Add your favorite Git resources (at least 1)
 
 * [Pro Git Online Book][ProGit] Chapters 2 & 3 contain the essentials. Downloadable e-book is available, too. 
 * [Visual Git Reference](https://marklodato.github.io/visual-git-guide) one page with illustrations of git commands.

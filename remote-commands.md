@@ -1,7 +1,5 @@
 ## Commands for Remotes
 
-
-
 1. List all your remote repositories and show their URLs:
    ```
    git remote -v
@@ -22,23 +20,21 @@
    Explain this error.
    > Remote Repository requires the upstream branch to track the specific branch. According to this error, 
      the user needs to set up the upstream branch in order to possibly push the dev-foo branch to the Remote Repository 
-
-
+   
 4. The command to push `dev-foo` to `origin` as a **new remote branch** on `origin` is:
    ```
    git push --set-upstream origin dev-foo
    ```
 
-
 5. (Create a local tracking branch for a remote branch) The remote repository (`origin`) has a branch named `e2e-test` that you don't have in your local repository.   
    The command to create a new local branch as a copy of the remote `e2e-test` branch that **tracks** the remote branch is:
    ```
-   Todo There are many commands that will do this.  You may write one or more than one.
+   git checkout -b e2e-test origin/e2e-test
    ```
 
 6. The command to change the URL of the remote "origin" to a new URL, such as `https://hostname/newuser/new-repo-name`, is:
    ```
-   TODO your answer
+   git remote set-url origin <Your New URL>
    ```
    This situation occurs when:
    - you change the name of a repo on Github
@@ -48,7 +44,7 @@
 
 7. To create a *second* remote repository for your local repo, the command to add a remote named "bitbucket" with the URL "https://bitbucket.org/your-username/git-commands" is:
    ```
-   todo your answer
+   git remote add bitbucket https://bitbucket.org/your-username/git-commands
    ```
    - Note: you must **create** an empty repo on Bitbucket. This command just adds it as a remote, it won't create the remote repo.
 
