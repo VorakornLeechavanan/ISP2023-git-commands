@@ -18,8 +18,9 @@
    fatal:  The current branch dev-foo has no upstream branch. 
    ```
    Explain this error.
-   > Remote Repository requires the upstream branch to track the specific branch. According to this error, 
-     the user needs to set up the upstream branch in order to possibly push the dev-foo branch to the Remote Repository 
+   > Remote Repository requires the remote branch to track the specific local branch. According to this error, 
+     the user needs to set up the remote branch in order to possibly push the "dev-foo" local branch into 
+     the Remote Repository. 
    
 4. The command to push `dev-foo` to `origin` as a **new remote branch** on `origin` is:
    ```
