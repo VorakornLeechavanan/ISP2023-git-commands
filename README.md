@@ -1,5 +1,4 @@
 
-**TODO**: Delete these instructions before you submit your work.
 ## Instructions
 
 1. Read Chapters 2 & 3 of [Pro Git][ProGit]. The chapters are short.
@@ -184,16 +183,39 @@ test/
 
 ## Branch and Merge
 
+1. Delete the branch
+   ```
+   git branch -d <Branch Name>
+   ```
 
+2. Create and Switch branch in one line
+   ```
+   git checkout -b <Branch Name>
+   ```
+   
+3. Rename a branch
+   ```
+   git branch -m <Branch Name> <New Name>
+   ```
+
+4. Merge the current branch with another branch
+   ```
+   git merge <Branch Name>
+   ```
 
 
 ## Favorites
+   Command to move branch to the specified former commit
+   ```
+   git branch -f <Your Branch> <Your Commit>
+   ```
 
 
 
 ---
 ## Resources
 
+* [Git Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf) Cheat Sheet for the git essentials
 * [Pro Git Online Book][ProGit] Chapters 2 & 3 contain the essentials. Downloadable e-book is available, too. 
 * [Visual Git Reference](https://marklodato.github.io/visual-git-guide) one page with illustrations of git commands.
 * [Markdown Cheatsheet][markdown-cheatsheet] summary of Markdown commands.
